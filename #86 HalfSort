@@ -1,0 +1,32 @@
+#include <iostream>
+#include <algorithm>
+#include <fstream>
+using namespace std;
+
+long long v[101];
+
+ifstream fin("halfsort.in");
+ofstream fout("halfsort.out");
+
+
+
+
+int main()
+{
+    int n,i;
+    fin>>n;
+    for(i=1;i<=n;i++)
+    {
+        fin>>v[i];
+    }
+    sort(v+n/2+1,v+n+1,greater<int>());
+    
+    sort(v+1, v+n/2+1);
+   
+    for(i=1;i<=n;i++)
+    {
+        fout<<v[i]<<" ";
+    }
+
+    return 0;
+}
